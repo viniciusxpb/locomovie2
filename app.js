@@ -7,10 +7,12 @@ app.config(function($routeProvider) {
         templateUrl : "views/movie-list.htm"
     })
     .when('/movie/:id', {
-        templateUrl : "views/movie-info.htm"
+        templateUrl : "views/movie-info.htm",
+        controller: 'movieInfo'
     })
-    .when("/green", {
-        templateUrl : "green.htm"
+    .when('/page/:page', {
+        templateUrl : "views/movie-list.htm",
+        controller: 'movieController'
     })
     .when("/blue", {
         templateUrl : "blue.htm"

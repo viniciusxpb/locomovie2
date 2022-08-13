@@ -1,23 +1,44 @@
 angular
     .module('ngLocoMovie')
-    .controller('movieController',function($scope, $location, movieFactory){
-        $scope.hello = "Olá mundo lindo";
+    .controller('movieController',function($scope, $location, movieFactory, $routeParams){
+        $scope.pageN = 1;
 
-        var url = $location.path().split('/');
-        debugger;
+        $scope.nextDisabled = true;
+        $scope.totalPages = 0;
 
-
-        movieFactory.getMovies().then(function(data){
+        if($routeParams.page){
+            $scope.pageN = parseInt($routeParams.page);
+        }
+        movieFactory.getMovies($scope.pageN).then(function(data){
+            $scope.totalPages = data.data.total_pages;
             $scope.movies = data.data.results;
+
+            //previousDisabled & previousN
+            if($scope.pageN==1){
+                $scope.previousDisabled = true;
+            }else{
+                $scope.previousDisabled = false;
+                $scope.previousN = $scope.pageN-1;
+            }
+
+            //nextDisabled & nextN
+            if($scope.pageN==$scope.totalPages){
+                $scope.nextDisabled = true;
+            }else{
+                $scope.nextDisabled = false;
+                $scope.nextN = $scope.pageN+1;
+            }
         });
 
         $scope.getImagePath = function(movie) {
             return "https://image.tmdb.org/t/p/original"+movie.backdrop_path;
         }
 
-    }).controller('PageController', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http){
-		$http.get('data/pages.json').success(function(data){
-			$scope.page = data[$routeParams.id];
-		});
+    }).controller('movieInfo', ['$scope', 'movieFactory', '$routeParams', '$http', function($scope, movieFactory, $routeParams){
+        movieFactory.getMovieInfo($routeParams.id).then(function(data){
+            $scope.movieInfo = data.data;
+        });
+
+        
 		
 	}])
