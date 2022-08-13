@@ -43,6 +43,11 @@ angular
             $scope.movieInfo = data.data;
         });
 
+        movieFactory.getMovieCast($routeParams.id).then(function(data){
+            $scope.directors = data.data.crew.filter(({job})=> job ==='Director');
+            $scope.writers = data.data.crew.filter(({job})=> job ==='Writer');
+        });
+
         
 		
 	}])

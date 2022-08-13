@@ -52,6 +52,10 @@ body {
     color: #6c7293;
   }
 
+  .lm_text_type2{
+    font-style: italic;
+  }
+
   .trailer-box{
     display: flex;
     align-items: center;
