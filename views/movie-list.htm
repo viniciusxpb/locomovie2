@@ -1,23 +1,41 @@
 
 
-<div class="container-xxl">
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col" ng-repeat="item in movies">
+<div class="container-xxl mt-4 ">
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col d-flex justify-content-center" ng-repeat="item in movies">
       <a href="#!movie/{{ item.id }}">
-        <div class="card h-100">
-          <img ng-src="{{getImagePath(item)}}" class="card-img-top" alt="...">
+        <div class="card lm_card bg-dark h-100">
+          <img ng-src="{{getPosterPath(item)}}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{item.title}}</h5>
-            <p class="card-text">{{item.overview}}</p>
+            <!-- <p class="card-text">{{item.overview}}</p> -->
+            <div class="lm_sub_text">
+              Lançamento:
+            </div>
+            <p>
+              {{item.release_date | date : "dd/MM/y"}}
+            </p>
           </div>
-          <div class="card-footer">
-            <small class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold"
+          <div class="card-footer lm_footer_align">
+
+            <div ng-if="item.video" class="trailer-box">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                  <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                </svg>
+              </div>
+              <div>
+                Assistir trailer
+              </div>
+            </div>
+
+            <div class="lm_star_info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold"
                 class="bi bi-star-fill" viewBox="0 0 16 16">
                 <path
                   d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
               </svg>
               {{item.vote_average}}/10
-            </small>
+            </div>
           </div>
         </div>
       </a>
@@ -26,8 +44,8 @@
 </div>
 
 
-<div class="container-xxl">
-  <nav aria-label="Page navigation example">
+<div class="container-xxl d-flex justify-content-center mt-4">
+  <nav>
     <ul class="pagination">
       <li class="page-item" ng-class="{disabled: previousDisabled}"><a class="page-link"
           href="#!page/{{previousN}}">Anterior</a></li>

@@ -34,6 +34,10 @@ angular
             return "https://image.tmdb.org/t/p/original"+movie.backdrop_path;
         }
 
+        $scope.getPosterPath = function(movie) {
+            return "https://image.tmdb.org/t/p/original"+movie.poster_path;
+        }
+
     }).controller('movieInfo', ['$scope', 'movieFactory', '$routeParams', '$http', function($scope, movieFactory, $routeParams){
         movieFactory.getMovieInfo($routeParams.id).then(function(data){
             $scope.movieInfo = data.data;

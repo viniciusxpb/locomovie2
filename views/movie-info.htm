@@ -1,6 +1,48 @@
 <div class="container-xxl">
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
+
+  <div class="card lm_card mb-4 mt-4" style="max-width: 100%;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img ng-src="{{getPosterPath(movieInfo)}}" class="card-img-top" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <div class="lm_title_type1">{{movieInfo.title}}</div>
+          <div class="lm_time_wrapper">
+            <div class="lm_text_type1">{{movieInfo.runtime}} min</div>
+            <div class="lm_genre_wrapper">
+              <div ng-repeat="genre in movieInfo.genres">
+                <div>{{genre.name}}</div>
+              </div>
+            </div>
+          </div>
+          
+          <div>{{movieInfo.overview}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <div class="row">
+  <div class="col-12 col-sm-6">
+    <img ng-src="{{getPosterPath(movieInfo)}}" class="card-img-top" alt="...">
+  </div>
+  <div class="col-12 col-sm-6">
+    <div>{{movieInfo.title}}</div>
+    <div>{{movieInfo.runtime}} min</div>
+    <div>
+      <div ng-repeat="genre in movieInfo.genres">
+        <div>{{genre.name}}</div>
+      </div>
+    </div>
+    <div>{{movieInfo.overview}}</div>
+  </div>
+</div> -->
+
+
+  <!-- <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col">
 
         <div class="card h-100">
@@ -19,6 +61,6 @@
           </div>
     </div>
 
-  </div>
+  </div> -->
 
 </div>

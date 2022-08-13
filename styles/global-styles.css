@@ -1,0 +1,66 @@
+body {
+    background-color: #000000;
+  }
+  a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+  }
+
+  .card {
+    max-width: 385px;
+  }
+
+  .navbar{
+    background-color: #191c24 !important;
+  }
+
+  .lm_card{
+    color: #e7e7e7;
+    background-color: #191c24 !important;
+  }
+
+  .lm_footer_align{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .lm_sub_text{
+    color: #6c7293 ;
+  }
+
+  .lm_star_info{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .lm_time_wrapper{
+    display: flex;
+  }
+
+  .lm_genre_wrapper{
+    display: flex;
+    gap: 5px;
+  }
+
+  .lm_title_type1{
+    font-size: 35px;
+  }
+
+  .lm_text_type1{
+    color: #6c7293;
+  }
+
+  .trailer-box{
+    display: flex;
+    align-items: center;
+    max-width: 134px;
+    border: 1px solid #fe4141;
+    border-radius: 5px;
+    padding: 4px;
+    padding-right: 8px;
+    justify-content: center;
+    color: #fe4141;
+    gap: 4px;
+  }
