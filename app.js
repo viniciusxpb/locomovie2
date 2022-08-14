@@ -1,6 +1,5 @@
 var app = angular.module('ngLocoMovie',['ui.bootstrap','ngRoute']);
 
-
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
@@ -13,8 +12,5 @@ app.config(function($routeProvider) {
     .when('/page/:page', {
         templateUrl : "views/movie-list.htm",
         controller: 'movieController'
-    })
-    .when("/blue", {
-        templateUrl : "blue.htm"
     });
 });

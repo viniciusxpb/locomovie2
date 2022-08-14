@@ -1,4 +1,4 @@
-<div class="container-xxl mt-4 ">
+<div class="container-xxl mt-4" ng-if="loading==false">
   <div class="row row-cols-1 row-cols-md-4 g-4">
     <div class="col d-flex justify-content-center" ng-repeat="item in movies">
       <a href="#!movie/{{ item.id }}">
@@ -40,8 +40,16 @@
   </div>
 </div>
 
+<div class="container-xxl d-flex justify-content-center mt-4" ng-if="loading==true" style="height: 90vh; padding-top: 24%;">
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="spinner-border text-light" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</div>
 
-<div class="container-xxl d-flex justify-content-center mt-4">
+
+<div class="container-xxl d-flex justify-content-center mt-4" ng-if="loading==false">
   <nav>
     <ul class="pagination">
       <li class="page-item" ng-class="{disabled: previousDisabled}"><a class="page-link"

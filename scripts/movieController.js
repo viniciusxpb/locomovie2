@@ -5,6 +5,7 @@ angular
         window.scrollTo(0,0);
 
         $scope.pageN = 1;
+        $scope.loading = true;
 
         $scope.nextDisabled = true;
         $scope.totalPages = 0;
@@ -31,6 +32,7 @@ angular
                 $scope.nextDisabled = false;
                 $scope.nextN = $scope.pageN+1;
             }
+            $scope.loading = false;
         });
 
         $scope.getImagePath = function(movie) {
@@ -55,9 +57,4 @@ angular
         movieFactory.getSimilarMovies($routeParams.id).then(function(data){
             $scope.similar_movies = data.data.results;
         });
-
-
-
-        
-		
 	}])

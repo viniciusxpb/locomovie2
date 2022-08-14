@@ -24,5 +24,4 @@ angular
             getMovieCast: getMovieCast,
             getSimilarMovies: getSimilarMovies
         }
-
     });
