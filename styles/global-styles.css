@@ -100,6 +100,14 @@ body {
     gap: 4px;
   }
 
+  .btn-close{
+    background-color: #6c7293 !important;
+  }
+  
+  .offcanvas-header{
+    align-self: flex-end;
+  }
+
   .pagination{
     --bs-pagination-bg: #191c24;
     --bs-pagination-color:white;
