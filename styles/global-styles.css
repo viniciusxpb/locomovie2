@@ -56,6 +56,36 @@ body {
     font-style: italic;
   }
 
+  .lm_sidebar{
+    background-color: #000000;
+    max-width: 300px;
+    color: #e7e7e7;
+    border-right: 1px #191c24 solid;
+  }
+
+  .lm_sidebar_section_title{
+    background-color: #191c24;
+    cursor: pointer;
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    align-items: center;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-left: 30px;
+  }
+
+  .lm_navbar_button{
+    color: #e7e7e7;
+    width: 45px;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 10px;
+    padding-left: 14px;
+    padding-top: 5px;
+    cursor: pointer;
+  }
+
   .trailer-box{
     display: flex;
     align-items: center;
@@ -67,4 +97,10 @@ body {
     justify-content: center;
     color: #fe4141;
     gap: 4px;
+  }
+
+  .pagination{
+    --bs-pagination-bg: #191c24;
+    --bs-pagination-color:white;
+    --bs-pagination-disabled-bg: #191c24;
   }

@@ -1,6 +1,9 @@
 angular
     .module('ngLocoMovie')
-    .controller('movieController',function($scope, $location, movieFactory, $routeParams){
+    .controller('movieController',function($scope, movieFactory, $routeParams){
+        
+        window.scrollTo(0,0);
+
         $scope.pageN = 1;
 
         $scope.nextDisabled = true;
