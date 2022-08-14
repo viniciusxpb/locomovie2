@@ -51,6 +51,12 @@ angular
             $scope.writers = data.data.crew.filter(({job})=> job ==='Writer');
         });
 
+        movieFactory.getSimilarMovies($routeParams.id).then(function(data){
+            $scope.similar_movies = data.data.results;
+        });
+
+
+
         
 		
 	}])
