@@ -45,8 +45,11 @@ angular
 
     })
     .controller('movieInfo', ['$scope', 'movieFactory', '$routeParams', '$http', function($scope, movieFactory, $routeParams){
+        $scope.movieLoading = true;
+        $scope.similarLoading = true;
         movieFactory.getMovieInfo($routeParams.id).then(function(data){
             $scope.movieInfo = data.data;
+            $scope.movieLoading = false;
         });
 
         movieFactory.getMovieCast($routeParams.id).then(function(data){
@@ -55,6 +58,7 @@ angular
         });
 
         movieFactory.getSimilarMovies($routeParams.id).then(function(data){
-            $scope.similar_movies = data.data.results;
+            $scope.similar_movies = data.data.results.slice(0, 4);
+            $scope.similarLoading = false;
         });
 	}])
